@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular expression</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: green;
+        }
+
+        .paka {
+            background: #ffffff;
+            padding: 20px 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="paka">
+        <h3>welcome to the sign form</h3>
+        <label for ="paka1">Email_id</label>
+        <input type="email" placeholder="enter your email"  id ="paka1" ><br>
+
+        <label for="paka2">password</label>
+        <input type="text" id="paka2" placeholder="enter your password"><br>
+        <button onclick="fun()">submit</button>
+    </div>
+    <script>
+        function fun(){
+        const ss = document.getElementById("paka1").value;
+        const ss1 = document.getElementById("paka2").value;
+        let a = /[a-z0-9._]+@[a-z]+\.[a-z]{2,3}/;
+        let b = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{9,}$/;
+        if (a.test(ss) && b.test(ss1)){
+            alert("login success completed");
+        }
+        else{
+            alert("invalid details");
+        }
+        }
+    </script>
+</body>
+</html>
